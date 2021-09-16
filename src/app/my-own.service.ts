@@ -12,6 +12,8 @@ export class MyOwnService {
   getStuff(): Observable<MyOwnDocument[]> {
     return this.firestore.collection<MyOwnDocument>('stuff').valueChanges()
   }
+
+  getPromiseValue() { return Promise.resolve('promise value')}
 }
 
 export interface MyOwnDocument {

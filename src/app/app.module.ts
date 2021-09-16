@@ -6,10 +6,12 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'
 
 import { AppComponent } from './app.component';
+import { PromiseComponent } from './promise/promise.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PromiseComponent
   ],
   imports: [
     BrowserModule,

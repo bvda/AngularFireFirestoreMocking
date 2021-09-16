@@ -1,5 +1,5 @@
 import { } from '@angular/compiler/src/util';
-import { TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { from, of } from 'rxjs';
 
@@ -32,5 +32,9 @@ describe('MyOwnService', () => {
         expect(value).toEqual([{ name: 'test'}])
         done();
       });
-  })  
+  })
+  
+  it('should wait for promise', waitForAsync(() => {
+    expect(service.getPromiseValue().then(value => expect(value).toBe('promise value')))
+  }))
 });
